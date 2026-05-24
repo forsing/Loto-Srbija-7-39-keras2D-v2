@@ -1,0 +1,8 @@
+
+--- 24.05.2026_12.37.36 (seed=39, N=4620) ---
+WIDE_best        -> [6, 7, 23, 24, 26, 35, 36]  (suma=157, neparnih=3/7, niskih(≤19)=2/7, raspon=30)
+WIDE_final       -> [6, 23, 25, 26, 32, 36, 38]  (suma=186, neparnih=2/7, niskih(≤19)=1/7, raspon=32)
+DEEP_best        -> [7, 10, 13, 18, 23, 32, 33]  (suma=136, neparnih=4/7, niskih(≤19)=4/7, raspon=26)
+DEEP_final       -> [7, 23, 26, 32, 33, 35, 36]  (suma=192, neparnih=4/7, niskih(≤19)=1/7, raspon=29)
+ENSEMBLE_best    -> [6, 7, 8, 23, 24, 26, 35]  (suma=129, neparnih=3/7, niskih(≤19)=3/7, raspon=29)
+ENSEMBLE_final   -> [7, 21, 23, 25, 26, 32, 36]  (suma=170, neparnih=4/7, niskih(≤19)=1/7, raspon=29)
