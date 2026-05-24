@@ -112,8 +112,8 @@ except Exception:
 # ============================================================
 # Konfiguracija
 # ============================================================
-CSV_PATH      = "/Users/4c/Desktop/GHQ/data/loto7_4620_k41.csv"
-OUT_TXT       = "/Users/4c/Desktop/GHQ/KvantniRegresor/loto_keras2D_v2_predikcija.txt"
+CSV_PATH      = "/data/loto7_4620_k41.csv"
+OUT_TXT       = "/loto_keras2D_v2_predikcija.txt"
 N_MIN, N_MAX  = 1, 39
 K             = 7
 LAG           = 5
@@ -448,7 +448,6 @@ print()
 """
 
 To je upravo veliki problem koji vredi pomenuti:
-
 Best epoche su 11 (WIDE) i 3 (DEEP). Znači posle 3-11 epoha modeli prestaju da uče i sledeće epohe samo gube vreme. 
 Razlog: lutrija je dominantno šum, val_auc ~0.51 (slučajno bi bio 0.50).
 
@@ -483,10 +482,9 @@ Praktično pravilo:
 BEST = pametna predikcija (uvek koristi)
 FINAL = samo dokaz da je trening krenuo da preobučava (ako je gori od BEST)
 
-
-
-
 BEST — bolje statistički.
+
+
 
 Iz back-testa:
 
@@ -548,12 +546,12 @@ Ako igras dve: DEEP_best + ENSEMBLE_best.
    (slučajan baseline ≈ 1.256 hits/7)
 
 🎯 Predikcija SLEDEĆEG kola:
-      WIDE_best        -> [6, 7, 23, 24, 26, 35, 36]
-      WIDE_final       -> [6, 23, 25, 26, 32, 36, 38]
-      DEEP_best        -> [7, 10, 13, 18, 23, 32, 33]
-      DEEP_final       -> [7, 23, 26, 32, 33, 35, 36]
-   🏁 ENSEMBLE_best    -> [6, 7, 8, 23, 24, 26, 35]
-   🏁 ENSEMBLE_final   -> [7, 21, 23, 25, 26, 32, 36]
+      WIDE_best        -> [6, x, 23, y, 26, z, 36]
+      WIDE_final       -> [6, x, 25, y, 32, z, 38]
+      DEEP_best        -> [7, x, 13, y, 23, z, 33]
+      DEEP_final       -> [7, x, 26, y, 33, z, 36]
+   🏁 ENSEMBLE_best    -> [6, x, 8, y, 24, z, 35]
+   🏁 ENSEMBLE_final   -> [7, x, 23, y, 26, z, 36]
 
 ✅ WIDE_best        validan (suma=157, neparnih=3/7, niskih(≤19)=2/7, raspon=30).
 ✅ WIDE_final       validan (suma=186, neparnih=2/7, niskih(≤19)=1/7, raspon=32).
